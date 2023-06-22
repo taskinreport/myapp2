@@ -1,0 +1,22 @@
+<div id="top-header">
+
+  <!-- Menü bağlantıları ve diğer header içeriği buraya gelecek -->
+  <div class="logo">
+    <%= link_to 'Logo', root_path %>
+  </div>
+  <div class="menu">
+    <%= link_to 'About', about_path %>
+    <%= link_to 'Pricing', pricing_path %>
+    <%= link_to 'Contact', contact_path %>
+    <% if user_signed_in? %>
+      <%= link_to 'Students', students_path %>
+    <% end %>
+  </div>
+  <div class="action-button">
+  <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path %>
+  <% end %>
+  </div>
+</div>

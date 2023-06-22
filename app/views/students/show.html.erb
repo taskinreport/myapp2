@@ -1,0 +1,9 @@
+<h1>Öğrenci Detayları</h1>
+
+<p>Ad Soyad: <%= @student.fullName %></p>
+<p>Yaş: <%= @student.age %></p>
+<p>Email: <%= @student.email %></p>
+
+<%= link_to "Geri Dön", students_path, class: "btn btn-primary" %>
+<%= link_to "Güncelle", edit_student_path(@student), class: "btn btn-success" %>
+<%= link_to "Sil", student_path(@student), method: :delete, data: { confirm: "Öğrenciyi silmek istediğinize emin misiniz?" }, class: "btn btn-danger" %>

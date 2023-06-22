@@ -1,0 +1,22 @@
+<h1>Yeni Öğrenci Oluştur</h1>
+
+<%= form_with model: @student, url: students_path, method: :post do |form| %>
+  <div>
+    <%= form.label :fullName %>
+    <%= form.text_field :fullName %>
+  </div>
+
+  <div>
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <%= form.submit "Kaydet" %>
+<% end %>
+
+<%= link_to "Geri Dön", students_path %>

@@ -1,0 +1,18 @@
+<h1>Öğrenci Listesi</h1>
+
+<div id="student-index">
+  <%= form_with(url: students_path, method: :get) do |form| %>
+    <%= form.label :query, "Arama yap:" %>
+    <%= form.text_field :query, value: params[:query] %>
+    <%= form.submit "Ara" %>
+  <% end %>
+<ul>
+  <% @students.each do |student| %>
+    <li>
+      <%= link_to student.fullName, student %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Yeni Öğrenci Ekle", new_student_path %>
+</div>

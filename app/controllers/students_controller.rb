@@ -2,8 +2,7 @@ class StudentsController < ApplicationController
   before_action :authenticate_user! # tüm metodlardan önce kullanıcıyı doğrula
 
   def index
-    @students = Student.all
-    @students = Student.search(params[:query])
+    @students = Student.search(params[:query]).page(params[:page]).per(10)
   end
 
   def show

@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def pricing
   end
 
+  def features
+  end
+
   def contact
   end
 end
